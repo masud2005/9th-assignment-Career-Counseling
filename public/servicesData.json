@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/xqGk6Fg/career-counseling.jpg",
+        "serviceName": "Career Counseling Sessions",
+        "category": "Online",
+        "description": "Personalized career guidance to help you achieve your professional goals.",
+        "price": "$50",
+        "duration": "05-12-24 5-6pm",
+        "counselor": "John Doe",
+        "rating": 4.8,
+        "buttonText": "Learn More"
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/VpGh2Vy/resume-review.jpg",
+        "serviceName": "Resume Review",
+        "category": "Offline",
+        "description": "Get your resume reviewed by experts to make it stand out.",
+        "price": "$30",
+        "duration": "07-12-24 2-3pm",
+        "counselor": "Jane Smith",
+        "rating": 4.6,
+        "buttonText": "Learn More"
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/ChBL4GP/skill-assessment.jpg",
+        "serviceName": "Skill Assessment",
+        "category": "Group",
+        "description": "Identify your strengths and weaknesses with our expert assessments.",
+        "price": "$40",
+        "duration": "10-12-24 4-5pm",
+        "counselor": "Michael Brown",
+        "rating": 4.7,
+        "buttonText": "Learn More"
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co/1zMTPJY/interview-prep.jpg",
+        "serviceName": "Interview Preparation",
+        "category": "Online",
+        "description": "Ace your next interview with personalized tips and practice sessions.",
+        "price": "$60",
+        "duration": "15-12-24 3-4pm",
+        "counselor": "Emily Davis",
+        "rating": 4.9,
+        "buttonText": "Learn More"
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co/vXLYp1q/networking-skills.jpg",
+        "serviceName": "Networking Skills Workshop",
+        "category": "Offline",
+        "description": "Learn the art of building professional connections effectively.",
+        "price": "$70",
+        "duration": "20-12-24 1-3pm",
+        "counselor": "Chris Johnson",
+        "rating": 4.5,
+        "buttonText": "Learn More"
+    },
+    {
+        "id": 6,
+        "image": "https://i.ibb.co/n0CGWTv/mentorship-program.jpg",
+        "serviceName": "Mentorship Program",
+        "category": "Group",
+        "description": "Join our mentorship program to learn directly from industry experts.",
+        "price": "$100",
+        "duration": "25-12-24 5-7pm",
+        "counselor": "Sophia Wilson",
+        "rating": 4.9,
+        "buttonText": "Learn More"
+    }
+]
