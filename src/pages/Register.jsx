@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
 
     const { createNewUser, loginWithGoogle } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
     // console.log(createNewUser);
 
     const handleRegister = (e) => {
@@ -91,11 +93,16 @@ const Register = () => {
                     </label>
                     <input type="email" name='email' placeholder="Enter your email address" className="input input-bordered placeholder:text-sm" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control relative">
                     <label className="label">
                         <span className="label-text text-base">Password</span>
                     </label>
-                    <input type="password" name='password' placeholder="Enter your password" className="input input-bordered placeholder:text-sm" required />
+                    <input type={`${showPassword ? 'text' : 'password'}`} name='password' placeholder="Enter your password" className="input input-bordered placeholder:text-sm" required />
+                    <a onClick={() => setShowPassword(!showPassword)} className='absolute right-3 bottom-3 p-1 bg-gray-100 rounded-full'>
+                        {
+                            showPassword ? <FaEyeSlash /> : <FaEye />
+                        }
+                    </a>
                 </div>
 
                 <div className="form-control">
