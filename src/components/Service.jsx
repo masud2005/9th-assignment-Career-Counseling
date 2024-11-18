@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    console.log(service);
-    const {serviceName, category, price, counselor , buttonText} = service;
+    // console.log(service);
+    const {id, serviceName, category, price, counselor , buttonText} = service;
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
@@ -19,7 +20,7 @@ const Service = ({ service }) => {
                     <p>Category: {category}</p>
                     <h2>Counselor: {counselor}</h2>
                     <div className="card-actions justify-center">
-                        <button className='btn'>{buttonText}</button>
+                        <Link to={`/service/${id}`} className='btn'>{buttonText}</Link>
                     </div>
                 </div>
             </div>

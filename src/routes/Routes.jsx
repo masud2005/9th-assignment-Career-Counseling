@@ -3,6 +3,7 @@ import HomeLayout from "../layout/HomeLayout";
 import MyProfile from "../pages/MyProfile";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
+import ServiceDetails from "../pages/ServiceDetails";
 
 const routes = createBrowserRouter([
     {
@@ -13,6 +14,11 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
+                loader: (() => fetch('/servicesData.json')),
+            },
+            {
+                path: '/service/:id',
+                element: <ServiceDetails />,
                 loader: (() => fetch('/servicesData.json')),
             },
             {
