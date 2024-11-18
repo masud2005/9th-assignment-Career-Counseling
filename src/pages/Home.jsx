@@ -3,6 +3,7 @@ import Slider from '../components/Slider';
 import { useLoaderData } from 'react-router-dom';
 import Service from '../components/Service';
 import WhyChooseUs from '../components/WhyChooseUs';
+import LatestBlog from '../components/LatestBlog';
 
 const Home = () => {
     const allServices = useLoaderData();
@@ -17,6 +18,7 @@ const Home = () => {
             </div>
 
             <WhyChooseUs />
+            <LatestBlog />
         </div>
     );
 };
