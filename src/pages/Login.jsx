@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
 import Swal from 'sweetalert2';
@@ -6,12 +6,14 @@ import Swal from 'sweetalert2';
 const Login = () => {
 
     const { userLogin, loginWithGoogle } = useContext(AuthContext);
+    const [email, setEmail] = useState('');
 
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         // console.log(email, password);
+        setEmail(email);
 
         userLogin(email, password)
             .then(result => {
@@ -61,7 +63,7 @@ const Login = () => {
                     <label className="label">
                         <span className="label-text text-base">Email address</span>
                     </label>
-                    <input type="email" name='email' placeholder="Enter your email address" className="input input-bordered placeholder:text-sm" required />
+                    <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email address" className="input input-bordered placeholder:text-sm" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -69,6 +71,12 @@ const Login = () => {
                     </label>
                     <input type="password" name='password' placeholder="Enter your password" className="input input-bordered placeholder:text-sm" required />
                 </div>
+                <p className="mt-2">
+                    Forgot your password?
+                    <Link to="/forget-password" state={{ email: email }} className="text-blue-500 underline">
+                        Reset Now
+                    </Link>
+                </p>
                 {/* {
                 error && <span className='text-red-600 text-sm'>{error}</span>
             } */}

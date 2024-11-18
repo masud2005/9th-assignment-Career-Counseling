@@ -120,7 +120,6 @@ const Register = () => {
             </form>
             <button onClick={handleLoginWithGoogle} className='btn w-fit mt-10 mx-auto'>Login with Google</button>
         </div>
-
     );
 };
 
