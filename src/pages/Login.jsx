@@ -1,34 +1,56 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const {userLogin, loginWithGoogle} = useContext(AuthContext);
+    const { userLogin, loginWithGoogle } = useContext(AuthContext);
 
-    const handleLogin =(e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         // console.log(email, password);
 
         userLogin(email, password)
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                // console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: `Welcome back, ${result.user.displayName || 'User'}!`,
+                });
+            })
+            .catch(error => {
+                // console.log(error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: error.code,
+                });
+
+            })
     }
 
     const handleLoginWithGoogle = () => {
         loginWithGoogle()
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                // console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Google Login Successful',
+                    text: `Welcome, ${result.user.displayName || 'User'}!`,
+                });
+            })
+            .catch(error => {
+                // console.log(error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Google Login Failed',
+                    text: error.code,
+                });
+            })
     }
 
     return (
@@ -53,7 +75,7 @@ const Login = () => {
                 <div className="form-control mt-6">
                     <button className="btn bg-gray-600 text-white hover:text-black">Login</button>
                 </div>
-                <p className='pt-3'>Dont’t Have An Account ? <Link to={'/register'}>Register</Link></p>
+                <p className='pt-3'>Dont’t Have An Account? Please <Link to={'/register'} className='text-green-600 font-semibold'>Register</Link></p>
             </form>
             <button onClick={handleLoginWithGoogle} className='btn w-fit mt-10 mx-auto'>Login with Google</button>
         </div>

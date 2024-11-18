@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../context/AuthProvider';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Register = () => {
-     
-    const {createNewUser} = useContext(AuthContext);
+
+    const { createNewUser, loginWithGoogle } = useContext(AuthContext);
     // console.log(createNewUser);
 
     const handleRegister = (e) => {
@@ -14,14 +16,57 @@ const Register = () => {
         const password = e.target.password.value;
         // console.log(name, photo, email, password);
 
+        // Password validation
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!passwordPattern.test(password)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Password',
+                text: 'Password must have at least 6 characters, including at least one uppercase and one lowercase letter.',
+            })
+            // alert('Password must have at least 6 characters, including at least one uppercase and one lowercase letter.')
+            return;
+        }
+
         // Register
         createNewUser(email, password)
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                // console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    text: `Welcome, ${name}! Your account has been created.`,
+                    timer: '5000'
+                });
+            })
+            .catch(error => {
+                // console.log(error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Registration Failed',
+                    text: error.code,
+                });
+            })
+    }
+
+    const handleLoginWithGoogle = () => {
+        loginWithGoogle()
+            .then(result => {
+                // console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: 'You have logged in using Google!',
+                });
+            })
+            .catch(error => {
+                // console.log(error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: error.code,
+                });
+            })
     }
 
     return (
@@ -56,15 +101,17 @@ const Register = () => {
                 <div className="form-control">
                     <label className="label cursor-pointer justify-start gap-2">
                         <input type="checkbox" defaultChecked className="checkbox checkbox-sm" />
-                        <span className="label-text">Accept Term & Conditions</span>
+                        <span className="label-text">Accept Terms & Conditions</span>
                     </label>
                 </div>
 
                 <div className="form-control mt-6">
                     <button className="btn bg-gray-600 text-white hover:text-black">Register</button>
                 </div>
+                <p className='pt-3'>Already Have An Account? <Link to={'/login'} className='text-green-600 font-semibold'>Login Now</Link></p>
                 {/* <p className='pt-3'>Dont’t Have An Account ? <Link to={'/auth/register'} className='text-red-500'>Register</Link></p> */}
             </form>
+            <button onClick={handleLoginWithGoogle} className='btn w-fit mt-10 mx-auto'>Login with Google</button>
         </div>
 
     );
