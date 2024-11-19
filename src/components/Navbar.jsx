@@ -30,6 +30,7 @@ const Navbar = () => {
         {
             user && <li><NavLink to={'my-profile'}>My Profile</NavLink></li>
         }
+        <li><NavLink to={'/aboutUs'}>About Us</NavLink></li>
     </>
 
     return (

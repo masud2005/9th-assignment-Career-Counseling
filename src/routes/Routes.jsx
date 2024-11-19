@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgetPassword from "../pages/ForgatePassword";
 import PrivateRoute from "../components/PrivateRoute";
+import AboutUs from "../pages/AboutUs";
 
 const routes = createBrowserRouter([
     {
@@ -44,6 +45,13 @@ const routes = createBrowserRouter([
             {
                 path: '/forget-password',
                 element: <ForgetPassword />
+            },
+            {
+                path: '/aboutUs',
+                element: <PrivateRoute>
+                    <AboutUs></AboutUs>
+                </PrivateRoute>,
+                loader: (() => fetch('/ourTeam.json'))
             }
         ]
     }
