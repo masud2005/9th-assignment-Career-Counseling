@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
 
@@ -9,10 +10,18 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOutUser()
             .then(() => {
-                console.log('User Log out Successful.');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Logged Out Successfully!',
+                    text: 'You have been logged out. See you soon!',
+                });
             })
             .catch(error => {
-                console.log(error.code);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Logout Failed',
+                    text: `Something went wrong: ${error.code}. Please try again.`,
+                });                
             })
     }
 
@@ -65,7 +74,7 @@ const Navbar = () => {
                                     <img className='rounded-full w-12' src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
                                     <div className="absolute left-0 top-full mt-2 px-4 py-2 bg-gray-800 text-white text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap overflow-hidden ">
                                         {user.displayName || 'Anonymous User'}
-                                    </div>  
+                                    </div>
                                 </div>
                                 <button onClick={handleLogOut} className="btn">Log Out</button>
                             </div>

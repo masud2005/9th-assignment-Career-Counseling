@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -7,6 +7,9 @@ const Login = () => {
 
     const { userLogin, loginWithGoogle } = useContext(AuthContext);
     const [email, setEmail] = useState('');
+    const location = useLocation();
+    // console.log(location);
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -17,12 +20,13 @@ const Login = () => {
 
         userLogin(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 Swal.fire({
                     icon: 'success',
                     title: 'Login Successful',
                     text: `Welcome back, ${result.user.displayName || 'User'}!`,
                 });
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 // console.log(error.message);
@@ -38,12 +42,13 @@ const Login = () => {
     const handleLoginWithGoogle = () => {
         loginWithGoogle()
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 Swal.fire({
                     icon: 'success',
                     title: 'Google Login Successful',
                     text: `Welcome, ${result.user.displayName || 'User'}!`,
                 });
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 // console.log(error.message);
