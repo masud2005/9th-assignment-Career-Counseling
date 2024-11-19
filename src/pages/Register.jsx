@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
-
-    const { createNewUser, loginWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const { createNewUser, loginWithGoogle, updateProfileInfo } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     // console.log(createNewUser);
 
@@ -25,7 +25,7 @@ const Register = () => {
                 icon: 'error',
                 title: 'Invalid Password',
                 text: 'Password must have at least 6 characters, including at least one uppercase and one lowercase letter.',
-            })
+            });
             // alert('Password must have at least 6 characters, including at least one uppercase and one lowercase letter.')
             return;
         }
@@ -40,6 +40,9 @@ const Register = () => {
                     text: `Welcome, ${name}! Your account has been created.`,
                     timer: '5000'
                 });
+
+                navigate('/')
+                updateProfileInfo(name, photo);
             })
             .catch(error => {
                 // console.log(error.message);
@@ -79,13 +82,13 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text text-base">Your Name</span>
                     </label>
-                    <input type="text" name='name' placeholder="Enter your name" className="input input-bordered placeholder:text-sm" required />
+                    <input type="text" name='name' placeholder="Enter your name" className="input input-bordered placeholder:text-sm" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-base">Photo URL</span>
                     </label>
-                    <input type="text" name='photo' placeholder="Enter your photo URL" className="input input-bordered placeholder:text-sm" required />
+                    <input type="text" name='photo' placeholder="Enter your photo URL" className="input input-bordered placeholder:text-sm" />
                 </div>
                 <div className="form-control">
                     <label className="label">

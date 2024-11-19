@@ -27,7 +27,9 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'my-profile'}>My Profile</NavLink></li>
+        {
+            user && <li><NavLink to={'my-profile'}>My Profile</NavLink></li>
+        }
     </>
 
     return (
@@ -71,7 +73,7 @@ const Navbar = () => {
                         user ?
                             <div className="flex items-center gap-2">
                                 <div className='relative group'>
-                                    <img className='rounded-full w-12' src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
+                                    <img className='rounded-full w-12 h-12' src={user?.photoURL || 'https://img.icons8.com/?size=48&id=z-JBA_KtSkxG&format=png'} alt="" />
                                     <div className="absolute left-0 top-full mt-2 px-4 py-2 bg-gray-800 text-white text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap overflow-hidden ">
                                         {user.displayName || 'Anonymous User'}
                                     </div>
