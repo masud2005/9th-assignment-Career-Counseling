@@ -26,18 +26,18 @@ const WhyChooseUs = () => {
     ]
 
     return (
-        <section className="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 py-16 mt-20">
+        <section className="bg-gradient-to-r from-green-200 via-blue-200 to-purple-300 py-16 mt-20">
             <div className="container mx-auto px-6 text-center">
-                <h2 className="text-4xl font-extrabold text-white mb-6 font-playfair">
-                    Why <span className="text-yellow-300">Choose Us?</span>
+                <h2 className="text-4xl font-extrabold text-gray-800 mb-6 font-playfair">
+                    Why <span className="text-teal-500">Choose Us?</span>
                 </h2>
-                <p className="text-lg text-gray-200 mb-12"> We are committed to providing the best career guidance tailored to your unique needs.</p>
+                <p className="text-lg text-gray-700 mb-12"> We are committed to providing the best career guidance tailored to your unique needs.</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {
                         whyChooseUs.map((item, index) => (
                             <div key={index} className="bg-white p-8 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out place-items-center">
-                                <div className="flex justify-center items-center text-5xl mb-6 text-white w-16 h-16 rounded-full bg-gradient-to-r from-green-400 to-teal-500 shadow-md">
+                                <div className="flex justify-center items-center text-5xl mb-6 text-white w-16 h-16 rounded-full bg-gradient-to-r from-teal-400 to-blue-500 shadow-md">
                                     <span>{item.icon}</span>
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-800 mb-4">{item.title}</h3>
@@ -48,6 +48,7 @@ const WhyChooseUs = () => {
                 </div>
             </div>
         </section>
+
     );
 };
 

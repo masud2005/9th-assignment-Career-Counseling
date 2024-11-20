@@ -22,14 +22,14 @@ const MyProfile = () => {
 
     // Handle Profile Update
     const handleUpdateProfile = () => {
-        // if (!name.trim() || !photoURL.trim()) {
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: "Validation Error",
-        //         text: "Name and Photo URL cannot be empty!",
-        //     });
-        //   return;
-        // }
+        if (!name.trim() || !photoURL.trim()) {
+            Swal.fire({
+                icon: "error",
+                title: "Validation Error",
+                text: "Name and Photo URL cannot be empty!",
+            });
+          return;
+        }
 
         updateProfileInfo(name, photoURL)
             .then(() => {
