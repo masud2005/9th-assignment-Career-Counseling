@@ -26,11 +26,11 @@ const Navbar = () => {
     }
 
     const links = <>
-        <li><NavLink to={'/'} className={({isActive}) => isActive ? 'text-base font-medium border border-purple-600 !text-purple-800' : "hover:text-indigo-400 transition-colors duration-300 text-base"}>Home</NavLink></li>
+        <li><NavLink to={'/'} className={({isActive}) => isActive ? 'text-base font-medium border border-purple-600 !text-black' : "hover:text-indigo-400 transition-colors duration-300 text-base text-purple-600"}>Home</NavLink></li>
         {
             user && <div className='lg:flex gap-6 items-center '>
-                <li><NavLink to={'my-profile'} className={({isActive}) => isActive ? 'text-base font-medium border border-purple-600 !text-purple-800' : "hover:text-indigo-400 transition-colors duration-300 text-base"}>My Profile</NavLink></li>
-                <li><NavLink to={'/aboutUs'} className={({isActive}) => isActive ? 'text-base font-medium border border-purple-600 !text-purple-800' : "hover:text-indigo-400 transition-colors duration-300 text-base"}>About Us</NavLink></li>
+                <li><NavLink to={'my-profile'} className={({isActive}) => isActive ? 'text-base font-medium border border-purple-600 !text-black' : "hover:text-indigo-400 transition-colors duration-300 text-base text-purple-600"}>My Profile</NavLink></li>
+                <li><NavLink to={'/aboutUs'} className={({isActive}) => isActive ? 'text-base font-medium border border-purple-600 !text-black' : "hover:text-indigo-400 transition-colors duration-300 text-base text-purple-600"}>About Us</NavLink></li>
             </div>
         }
     </>
@@ -62,7 +62,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="text-xl md:text-3xl text-gray-800 font-playfair font-bold italic">Career Counseling</a>
+                <a className="text-xl md:text-3xl bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text font-playfair font-bold italic">Career Counseling</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 space-x-6">

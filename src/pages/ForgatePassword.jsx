@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const ForgetPassword = () => {
     const location = useLocation();
     const initialEmail = location.state?.email || '';
-    console.log(location, initialEmail);
+    // console.log(location, initialEmail);
     const [email, setEmail] = useState(initialEmail);
     const auth = getAuth();
 
@@ -33,7 +33,11 @@ const ForgetPassword = () => {
                     customClass: {
                         confirmButton: 'bg-blue-600 text-white'
                     }
-                });
+                })
+                    .then(() => {
+                        // Redirect to gmail
+                        window.open('https://mail.google.com', '_blank');
+                    })
                 // Reset email field after sending reset link
                 setEmail('');
             })

@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -74,6 +74,7 @@ const Register = () => {
                         confirmButton: 'bg-blue-600 text-white'
                     }
                 });
+                navigate('/');
             })
             .catch(error => {
                 // console.log(error.message);
@@ -89,54 +90,56 @@ const Register = () => {
     }
 
     return (
-        <div className="card bg-base-100 w-full max-w-lg mx-auto my-10 shrink-0 shadow-2xl font-poppins p-10">
-            <h1 className='text-center text-3xl font-semibold pb-5 border-b'>Register your account</h1>
-            <form onSubmit={handleRegister} className="card-body p-0 pt-3">
+        <div className="flex items-center justify-center my-10">
+        <div className="bg-white shadow-xl rounded-lg w-full max-w-xl px-8 py-10">
+            <h1 className="text-4xl font-bold text-center text-purple-700 mb-6">
+                Register Your Account
+            </h1>
+            <form onSubmit={handleRegister} className="space-y-6">
+                {/* Name Field */}
                 <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-base">Your Name</span>
-                    </label>
-                    <input type="text" name='name' placeholder="Enter your name" className="input input-bordered placeholder:text-sm" />
+                    <label className="label text-lg font-medium text-gray-700">Your Name</label>
+                    <input type="text" name="name" placeholder="Enter your name" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"/>
                 </div>
+
+                {/* Photo URL Field */}
                 <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-base">Photo URL</span>
-                    </label>
-                    <input type="text" name='photo' placeholder="Enter your photo URL" className="input input-bordered placeholder:text-sm" />
+                    <label className="label text-lg font-medium text-gray-700">Photo URL</label>
+                    <input type="text" name="photo" placeholder="Enter your photo URL" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"/>
                 </div>
+
+                {/* Email Field */}
                 <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-base">Email address</span>
-                    </label>
-                    <input type="email" name='email' placeholder="Enter your email address" className="input input-bordered placeholder:text-sm" required />
+                    <label className="label text-lg font-medium text-gray-700">Email Address</label>
+                    <input type="email" name="email" placeholder="Enter your email address" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition" required />
                 </div>
+
+                {/* Password Field */}
                 <div className="form-control relative">
-                    <label className="label">
-                        <span className="label-text text-base">Password</span>
-                    </label>
-                    <input type={`${showPassword ? 'text' : 'password'}`} name='password' placeholder="Enter your password" className="input input-bordered placeholder:text-sm" required />
-                    <a onClick={() => setShowPassword(!showPassword)} className='absolute right-3 bottom-3 p-1 bg-gray-100 rounded-full'>
-                        {
-                            showPassword ? <FaEyeSlash /> : <FaEye />
-                        }
-                    </a>
+                    <label className="label text-lg font-medium text-gray-700">Password</label>
+                    <input type={`${showPassword ? 'text' : 'password'}`} name="password" placeholder="Enter your password" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"/>
+                    <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3 bottom-3 text-gray-600 cursor-pointer"> {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}</span>
                 </div>
 
+                {/* Terms & Conditions */}
+                <label className=" flex items-center gap-2">
+                    <input type="checkbox" defaultChecked className="checkbox checkbox-md border-gray-300"/>
+                    <span className="text-base text-gray-600">Accept Terms & Conditions</span>
+                </label>
+
+                {/* Register Button */}
                 <div className="form-control">
-                    <label className="label cursor-pointer justify-start gap-2">
-                        <input type="checkbox" defaultChecked className="checkbox checkbox-sm" />
-                        <span className="label-text">Accept Terms & Conditions</span>
-                    </label>
+                    <button className="btn w-full py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition"> Register </button>
                 </div>
-
-                <div className="form-control mt-6">
-                    <button className="btn bg-gray-600 text-white hover:text-black">Register</button>
-                </div>
-                <p className='pt-3'>Already Have An Account? <Link to={'/login'} className='text-green-600 font-semibold'>Login Now</Link></p>
-                {/* <p className='pt-3'>Dont’t Have An Account ? <Link to={'/auth/register'} className='text-red-500'>Register</Link></p> */}
             </form>
-            <button onClick={handleLoginWithGoogle} className='btn w-fit mt-10 mx-auto'>Login with Google</button>
+
+            {/* Login with Google */}
+            <button onClick={handleLoginWithGoogle} className="btn w-full mt-6 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition flex items-center justify-center"><FaGoogle /> Login with Google</button>
+            
+            {/* Redirect to Login */}
+            <p className="text-center text-base font-medium text-gray-600 mt-3">Already have an account?{' '}<Link to="/login" className="text-purple-500 hover:underline">Login Now</Link></p>
         </div>
+    </div>
     );
 };
 

@@ -3,56 +3,56 @@
         "id": 1,
         "name": "John Doe",
         "role": "Founder & CEO",
-        "photo": "https://via.placeholder.com/150",
+        "photo": "https://i.ibb.co.com/yY0w341/images-1.jpg",
         "bio": "John is a visionary leader with 10+ years of experience in career counseling and business development."
     },
     {
         "id": 2,
         "name": "Jane Smith",
         "role": "Lead Counselor",
-        "photo": "https://via.placeholder.com/150",
+        "photo": "https://i.ibb.co.com/f0M535s/Jane-Smith-Infobox.webp",
         "bio": "Jane specializes in helping individuals find their ideal career paths with her expert guidance."
     },
     {
         "id": 3,
         "name": "Alice Brown",
         "role": "Career Strategist",
-        "photo": "https://via.placeholder.com/150",
+        "photo": "https://i.ibb.co.com/cYQLLXM/images-2.jpg",
         "bio": "Alice has a knack for creating innovative strategies to help clients achieve their career goals."
     },
     {
         "id": 4,
         "name": "Michael Lee",
         "role": "Job Market Analyst",
-        "photo": "https://via.placeholder.com/150",
+        "photo": "https://i.ibb.co.com/N2P3KBH/MLEE-Headshot-Outside.jpg",
         "bio": "Michael provides in-depth analysis of job market trends to guide our clients effectively."
     },
     {
         "id": 5,
         "name": "Emily Davis",
         "role": "Resume Expert",
-        "photo": "https://via.placeholder.com/150",
+        "photo": "https://i.ibb.co.com/Tcyj0w6/davis-emily-cropped.png",
         "bio": "Emily is an expert in crafting impactful resumes that make candidates stand out."
     },
     {
         "id": 6,
         "name": "Chris Johnson",
         "role": "Interview Coach",
-        "photo": "https://via.placeholder.com/150",
+        "photo": "https://i.ibb.co.com/6Rcbx3C/nrmih1rao9t71.webp",
         "bio": "Chris trains individuals to ace their interviews with confidence and professionalism."
     },
     {
         "id": 7,
         "name": "Sophia Martinez",
         "role": "Networking Specialist",
-        "photo": "https://via.placeholder.com/150",
+        "photo": "https://i.ibb.co.com/xL2yZ5S/sophia-martinez-abbud.jpg",
         "bio": "Sophia helps clients build strong professional networks to accelerate their careers."
     },
     {
         "id": 8,
         "name": "Daniel Kim",
         "role": "Psychometric Analyst",
-        "photo": "https://via.placeholder.com/150",
+        "photo": "https://i.ibb.co.com/8d33FH4/MV5-BOWM2-YTFm-ZTAt-Nz-Nh-NS00-Yz-M0-LWJj-Mm-Qt-Y2-I5-OWJj-ZTRj-Mj-Uy-Xk-Ey-Xk-Fqc-Gc-V1.jpg",
         "bio": "Daniel uses psychometric tools to assess clients' strengths and guide them to suitable careers."
     }
 ]

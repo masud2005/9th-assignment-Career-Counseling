@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
 import Swal from 'sweetalert2';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
@@ -73,36 +74,26 @@ const Login = () => {
     }
 
     return (
-        <div className="card bg-base-100 w-full max-w-lg mx-auto my-10 shrink-0 shadow-2xl font-poppins p-10">
-            <h1 className='text-center text-3xl font-semibold pb-5 border-b'>Login your account</h1>
-            <form onSubmit={handleLogin} className="card-body p-0 pt-3">
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-base">Email address</span>
-                    </label>
-                    <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email address" className="input input-bordered placeholder:text-sm" required />
+        <div className="flex items-center justify-center my-10">
+            <div className="bg-white shadow-2xl rounded-lg w-full max-w-md px-8 py-10">
+                <h1 className="text-4xl font-bold text-center text-indigo-600 mb-6">Welcome Back</h1>
+                <form onSubmit={handleLogin} className="space-y-4">
+                    <div className="form-control">
+                        <label className="label text-lg font-medium text-gray-700">Email address</label>
+                        <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label text-lg font-medium text-gray-700">Password</label>
+                        <input type="password" name="password" placeholder="Enter your password" className="input input-bordered w-full px-4 py-2 rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition" required/>
+                    </div>
+                    <p className="text-sm text-right"><Link to="/forget-password" state={{ email: email }} className="text-indigo-600 hover:underline"> Forgot your password? </Link></p>
+                    <button className="btn w-full py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"> Login </button>
+                </form>
+                <div className="mt-6">
+                    <button onClick={handleLoginWithGoogle} className="w-full flex items-center justify-center py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-700 transition"><FaGoogle /> <span className='ml-2'>Login with Google</span></button>
                 </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-base">Password</span>
-                    </label>
-                    <input type="password" name='password' placeholder="Enter your password" className="input input-bordered placeholder:text-sm" required />
-                </div>
-                <p className="mt-2">
-                    Forgot your password?
-                    <Link to="/forget-password" state={{ email: email }} className="text-blue-500 underline">
-                        Reset Now
-                    </Link>
-                </p>
-                {/* {
-                error && <span className='text-red-600 text-sm'>{error}</span>
-            } */}
-                <div className="form-control mt-6">
-                    <button className="btn bg-gray-600 text-white hover:text-black">Login</button>
-                </div>
-                <p className='pt-3'>Dont’t Have An Account? Please <Link to={'/register'} className='text-green-600 font-semibold'>Register</Link></p>
-            </form>
-            <button onClick={handleLoginWithGoogle} className='btn w-fit mt-10 mx-auto'>Login with Google</button>
+                <p className="mt-4 text-center text-base text-gray-600">Don’t have an account?<Link to="/register" className="text-indigo-600 font-medium hover:underline"> Register now</Link></p>
+            </div>
         </div>
     );
 };

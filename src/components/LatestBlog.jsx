@@ -3,17 +3,17 @@ const LatestBlog = () => {
     {
       title: "Top 5 Career Tips You Should Know",
       description: "Learn the best tips to boost your career prospects.",
-      image: "https://via.placeholder.com/400x250",
+      image: "https://i.ibb.co.com/RPsg886/Career-success.webp",
     },
     {
       title: "How to Write a Perfect Resume",
       description: "Step-by-step guide to creating an impactful resume.",
-      image: "https://via.placeholder.com/400x250",
+      image: "https://i.ibb.co.com/4ZrwfBq/4-No-Text-4-Steps-To-Writing-The-Perfect-Resume.webp",
     },
     {
       title: "Mastering Online Interviews",
       description: "Tips to ace your next online interview.",
-      image: "https://via.placeholder.com/400x250",
+      image: "https://i.ibb.co.com/W040TmC/1693553932390.png",
     },
   ];
 

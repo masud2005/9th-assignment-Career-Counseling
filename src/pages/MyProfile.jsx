@@ -59,13 +59,13 @@ const MyProfile = () => {
                         <span className="text-indigo-600">My</span> Profile
                     </h2>
                     <div className="bg-gradient-to-br from-purple-400 to-indigo-700 w-fit mx-auto rounded-full p-[3px] mb-3">
-                        <img src={sidebarPhotoURL} alt="User Avatar" className=" rounded-full" />
+                        <img src={sidebarPhotoURL} alt="User Avatar" className="w-32 h-32 rounded-full" />
                     </div>
                     <h2 className="text-2xl  font-bold">{sidebarName}</h2>
                     <p className="mt-2 font-medium">Email: {user?.email}</p>
-                    <div className="grid grid-cols-4 w-5/6 mx-auto overflow-clip text-left mt-2">
+                    <div className="grid grid-cols-4 w-5/6 mx-auto h-14 text-left mt-2">
                         <span className="col-span-1 flex items-center font-medium">Photo URL: </span>
-                        <a className="col-span-3 text-purple-700" href={sidebarPhotoURL} target="blank">{sidebarPhotoURL}</a>
+                        <a className="col-span-3 text-purple-700 overflow-scroll" href={sidebarPhotoURL} target="blank">{sidebarPhotoURL}</a>
                     </div>
                 </div>
             </div>
