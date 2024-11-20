@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OurTeam = ({team}) => {
-    console.log(team);
+    // console.log(team);
     const {photo, name, role, bio} = team;
     return (
         <div>
@@ -12,7 +12,7 @@ const OurTeam = ({team}) => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-gray-300"
                 />
                 <h3 className="text-xl font-medium ">{name}</h3>
-                <p className="text-gray-600 text-lg py-1">{role}</p>
+                <p className="text-black text-lg py-1">{role}</p>
                 <p className="text-gray-600 text-sm md:text-base">{bio}</p>
             </div>
         </div>

@@ -25,6 +25,9 @@ const Login = () => {
                     icon: 'success',
                     title: 'Login Successful',
                     text: `Welcome back, ${result.user.displayName || 'User'}!`,
+                    customClass: {
+                        confirmButton: 'bg-blue-600 text-white'
+                    }
                 });
                 navigate(location?.state ? location.state : '/');
             })
@@ -34,6 +37,9 @@ const Login = () => {
                     icon: 'error',
                     title: 'Login Failed',
                     text: error.code,
+                    customClass: {
+                        confirmButton: 'bg-red-600 text-white'
+                    }
                 });
 
             })
@@ -42,11 +48,14 @@ const Login = () => {
     const handleLoginWithGoogle = () => {
         loginWithGoogle()
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 Swal.fire({
                     icon: 'success',
                     title: 'Google Login Successful',
                     text: `Welcome, ${result.user.displayName || 'User'}!`,
+                    customClass: {
+                        confirmButton: 'bg-blue-600 text-white'
+                    }
                 });
                 navigate(location?.state ? location.state : '/');
             })
@@ -56,6 +65,9 @@ const Login = () => {
                     icon: 'error',
                     title: 'Google Login Failed',
                     text: error.code,
+                    customClass: {
+                        confirmButton: 'bg-red-600 text-white'
+                    }
                 });
             })
     }

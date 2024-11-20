@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { sendPasswordResetEmail, getAuth } from "firebase/auth";
 import { useLocation } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ForgetPassword = () => {
     const location = useLocation();
@@ -11,21 +12,42 @@ const ForgetPassword = () => {
 
     const handleResetPassword = () => {
         if (!email) {
-            alert('Please enter your email address.');
+            // alert('Please enter your email address.');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Email Address Required',
+                text: 'Please enter your email address.',
+                customClass: {
+                    confirmButton: 'bg-yellow-500 text-white'
+                }
+            });
             return;
         }
 
         sendPasswordResetEmail(auth, email)
             .then(() => {
-                alert('Password reset email sent. Please check your inbox.');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Password Reset Email Sent!',
+                    text: 'Please check your inbox to reset your password.',
+                    customClass: {
+                        confirmButton: 'bg-blue-600 text-white'
+                    }
+                });
                 // Reset email field after sending reset link
-                setEmail(''); // Clear the email field after reset
-                // Optionally redirect the user to their inbox
-                // window.location.href = "https://mail.google.com"; 
+                setEmail('');
             })
             .catch((error) => {
-                console.error(error.message);
-                alert('Error: ' + error.message);
+                // console.error(error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Something went wrong: ' + error.code,
+                    confirmButtonText: 'Try Again',
+                    customClass: {
+                        confirmButton: 'bg-red-600 text-white'
+                    }
+                });
             });
     };
 

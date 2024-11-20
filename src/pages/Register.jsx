@@ -25,6 +25,9 @@ const Register = () => {
                 icon: 'error',
                 title: 'Invalid Password',
                 text: 'Password must have at least 6 characters, including at least one uppercase and one lowercase letter.',
+                customClass: {
+                    confirmButton: 'bg-red-600 text-white'
+                }
             });
             // alert('Password must have at least 6 characters, including at least one uppercase and one lowercase letter.')
             return;
@@ -38,11 +41,13 @@ const Register = () => {
                     icon: 'success',
                     title: 'Registration Successful',
                     text: `Welcome, ${name}! Your account has been created.`,
-                    timer: '5000'
+                    customClass: {
+                        confirmButton: 'bg-blue-600 text-white'
+                    }
                 });
 
                 navigate('/')
-                updateProfileInfo(name, photo);
+                updateProfileInfo(name, photo); 
             })
             .catch(error => {
                 // console.log(error.message);
@@ -50,6 +55,9 @@ const Register = () => {
                     icon: 'error',
                     title: 'Registration Failed',
                     text: error.code,
+                    customClass: {
+                        confirmButton: 'bg-red-600 text-white'
+                    }
                 });
             })
     }
@@ -62,6 +70,9 @@ const Register = () => {
                     icon: 'success',
                     title: 'Login Successful',
                     text: 'You have logged in using Google!',
+                    customClass: {
+                        confirmButton: 'bg-blue-600 text-white'
+                    }
                 });
             })
             .catch(error => {
@@ -70,6 +81,9 @@ const Register = () => {
                     icon: 'error',
                     title: 'Login Failed',
                     text: error.code,
+                    customClass: {
+                        confirmButton: 'bg-red-600 text-white'
+                    }
                 });
             })
     }

@@ -1,46 +1,50 @@
-
+import React from "react";
 
 const WhyChooseUs = () => {
+
+    const whyChooseUs = [
+        {
+            icon: "🎓",
+            title: "Experienced Counselors",
+            description: "Our counselors bring years of experience to guide your career journey."
+        },
+        {
+            icon: "✨",
+            title: "Personalized Guidance",
+            description: "We craft advice tailored to your unique career aspirations."
+        },
+        {
+            icon: "💻",
+            title: "Flexible Services",
+            description: "Access our services both online and offline for your convenience."
+        },
+        {
+            icon: "🕒",
+            title: "24/7 Support",
+            description: "We’re available anytime to answer your career-related queries."
+        }
+    ]
+
     return (
-        <section className="bg-gray-100 py-10">
-            <div className="container mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-6">Why Choose Us?</h2>
-                <p className="text-lg text-gray-600 mb-8">
-                    We provide the best career counseling services tailored for you!
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {/* Card 1 */}
-                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
-                        <div className="text-4xl mb-4">🎓</div>
-                        <h3 className="text-xl font-semibold mb-2">Experienced Counselors</h3>
-                        <p className="text-gray-600">
-                            Our counselors have years of experience in guiding careers.
-                        </p>
-                    </div>
-                    {/* Card 2 */}
-                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
-                        <div className="text-4xl mb-4">✨</div>
-                        <h3 className="text-xl font-semibold mb-2">Personalized Guidance</h3>
-                        <p className="text-gray-600">
-                            Receive tailored advice to achieve your unique career goals.
-                        </p>
-                    </div>
-                    {/* Card 3 */}
-                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
-                        <div className="text-4xl mb-4">💻</div>
-                        <h3 className="text-xl font-semibold mb-2">Online & Offline Services</h3>
-                        <p className="text-gray-600">
-                            Access our services both online and offline for flexibility.
-                        </p>
-                    </div>
-                    {/* Card 4 */}
-                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
-                        <div className="text-4xl mb-4">🕒</div>
-                        <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
-                        <p className="text-gray-600">
-                            We're here to help you anytime, anywhere.
-                        </p>
-                    </div>
+        <section className="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 py-16 mt-20">
+            <div className="container mx-auto px-6 text-center">
+                <h2 className="text-4xl font-extrabold text-white mb-6 font-playfair">
+                    Why <span className="text-yellow-300">Choose Us?</span>
+                </h2>
+                <p className="text-lg text-gray-200 mb-12"> We are committed to providing the best career guidance tailored to your unique needs.</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {
+                        whyChooseUs.map((item, index) => (
+                            <div key={index} className="bg-white p-8 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out place-items-center">
+                                <div className="flex justify-center items-center text-5xl mb-6 text-white w-16 h-16 rounded-full bg-gradient-to-r from-green-400 to-teal-500 shadow-md">
+                                    <span>{item.icon}</span>
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-800 mb-4">{item.title}</h3>
+                                <p className="text-gray-600">{item.description}</p>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </section>

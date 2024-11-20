@@ -5,14 +5,20 @@ import Footer from '../components/Footer';
 
 const HomeLayout = () => {
     return (
-        <div>
-            <Navbar />
+        <>
+            <header className='sticky top-0 z-50 shadow-lg bg-opacity-60 backdrop-blur-md'>
+                <Navbar />
+            </header>
 
-            <Outlet />
+            <main className='min-h-[calc(100vh-433px)]'>
+                <Outlet />
+            </main>
 
-            <Footer />
-        </div>
+            <footer>
+                <Footer />
+            </footer>
+        </>
     );
 };
 
-export default HomeLayout;
+export default HomeLayout;  
