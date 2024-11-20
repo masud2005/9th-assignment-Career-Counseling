@@ -24,7 +24,7 @@ const MyProfile = () => {
     const handleUpdateProfile = () => {
         if (!name.trim() || !photoURL.trim()) {
             Swal.fire({
-                icon: "error",
+                icon: "warning",
                 title: "Validation Error",
                 text: "Name and Photo URL cannot be empty!",
             });
