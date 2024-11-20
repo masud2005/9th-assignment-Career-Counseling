@@ -63,10 +63,10 @@ const ForgetPassword = () => {
                 <title>Forgot Password || Career Counseling</title>
             </Helmet>
 
-            <h1 className="text-2xl font-bold mb-5 text-center">Forgot Password</h1>
+            <h1 className="text-3xl text-indigo-600 font-bold mb-5 text-center">Forgot Password</h1>
             <label className="block text-lg mb-2">Email Address</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="w-full p-2 border rounded mb-4" />
-            <button onClick={handleResetPassword} className="btn bg-blue-500 text-white w-full py-2 rounded" > Reset Password </button>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="w-full p-2 border rounded mb-4 focus:outline-none focus:ring-2 focus:ring-purple-500"/>
+            <button onClick={handleResetPassword} className="btn bg-purple-500 text-white w-full py-2 rounded font-medium text-lg hover:text-black" > Reset Password </button>
         </div>
     );
 };

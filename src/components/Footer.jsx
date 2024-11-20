@@ -68,9 +68,9 @@ const Footer = () => {
             </div>
 
             {/* Footer Bottom */}
-            <div className="text-center mt-12 border-t border-gray-700 pt-6">
+            <div className="text-center mt-12 border-t border-gray-500 pt-6">
                 <p className="text-gray-400 text-sm">
-                    © {new Date().getFullYear()} Career Counsel. Designed by <span className="font-semibold">Masud Rana</span>.
+                    © {new Date().getFullYear()} Career Counsel. Designed by <span className="font-semibold text-white text-lg font-playfair">Masud Rana</span>.
                 </p>
             </div>
         </footer>

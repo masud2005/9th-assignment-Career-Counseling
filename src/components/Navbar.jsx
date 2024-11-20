@@ -84,7 +84,7 @@ const Navbar = () => {
                             <button onClick={handleLogOut} className="btn border-purple-600 hover:bg-indigo-500 text-gray-800 rounded-xl transition-all duration-300">Log Out</button>
                         </div>
                         :
-                        <NavLink to={'/login'} className="btn border-purple-600 hover:bg-indigo-500 text-gray-800 rounded-xl transition-all duration-300">Login</NavLink>
+                        <NavLink to={'/login'} className={({isActive}) => isActive ? 'btn border border-purple-500' : "btn bg-purple-500"}>Login</NavLink>
                 }
             </div>
         </div>
