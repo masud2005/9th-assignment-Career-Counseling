@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
     const { user, updateProfileInfo } = useContext(AuthContext);
@@ -51,7 +52,9 @@ const MyProfile = () => {
 
     return (
         <div className="container mx-auto flex flex-col md:flex-row gap-5 lg:gap-10 py-10 px-2">
-
+            <Helmet>
+                <title>My Profile || Career Counseling</title>
+            </Helmet>
             {/* User Information Sidebar */}
             <div className="w-full md:w-1/3 bg-gradient-to-br from-purple-400 to-indigo-700 p-[2px] rounded-xl shadow-2xl">
                 <div className="text-center place-content-center h-full bg-white rounded-xl py-5 md:py-0">

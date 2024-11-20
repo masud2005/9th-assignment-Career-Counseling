@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { sendPasswordResetEmail, getAuth } from "firebase/auth";
 import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const ForgetPassword = () => {
     const location = useLocation();
@@ -57,6 +58,11 @@ const ForgetPassword = () => {
 
     return (
         <div className="container mx-auto my-10 p-5 max-w-md bg-white shadow-lg rounded">
+
+            <Helmet>
+                <title>Forgot Password || Career Counseling</title>
+            </Helmet>
+
             <h1 className="text-2xl font-bold mb-5 text-center">Forgot Password</h1>
             <label className="block text-lg mb-2">Email Address</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="w-full p-2 border rounded mb-4" />

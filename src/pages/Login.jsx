@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
 import Swal from 'sweetalert2';
 import { FaGoogle } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -75,6 +76,11 @@ const Login = () => {
 
     return (
         <div className="flex items-center justify-center my-10">
+
+            <Helmet>
+                <title>Login || Career Counseling</title>
+            </Helmet>
+
             <div className="bg-white shadow-2xl rounded-lg w-full max-w-md px-8 py-10">
                 <h1 className="text-4xl font-bold text-center text-indigo-600 mb-6">Welcome Back</h1>
                 <form onSubmit={handleLogin} className="space-y-4">

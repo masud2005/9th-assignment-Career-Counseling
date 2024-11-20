@@ -1,12 +1,18 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import OurTeam from "../components/OurTeam";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
     const ourTeam = useLoaderData();
     // console.log(ourTeam);
     return (
         <div className="container mx-auto my-10 p-6 bg-gray-50 rounded-lg shadow-lg">
+
+            <Helmet>
+                <title>About Us || Career Counseling</title>
+            </Helmet>
+
             <h1 className="text-4xl font-bold text-center text-blue-600 mb-6 font-lobsterTwo italic">
                 About Us
             </h1>

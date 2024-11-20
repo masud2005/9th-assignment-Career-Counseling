@@ -4,12 +4,16 @@ import { useLoaderData, useLocation } from 'react-router-dom';
 import Service from '../components/Service';
 import WhyChooseUs from '../components/WhyChooseUs';
 import LatestBlog from '../components/LatestBlog';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     const allServices = useLoaderData();
     // console.log(allServices);
     return (
         <div>
+            <Helmet>
+                <title>Home || Career Counseling</title>
+            </Helmet>
             <Slider />
             <div className='container mx-auto '>
                 <div className="text-center mb-10">
