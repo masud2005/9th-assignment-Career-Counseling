@@ -67,3 +67,18 @@ Check out the live demo here: [https://career-counselling-92953.web.app/](https:
 - **React Helmet**: For managing document head elements and improving SEO optimization.  
 
 ---
+
+## 🛠️ Running the Application Locally
+
+### Prerequisites:
+- **Node.js** (version 14 or later) installed.
+- A **Firebase account** for authentication (Google login and Email/Password login).
+
+### Setup Instructions:
+
+1. **Clone the repository**:
+   Clone the **Career Counseling Platform** repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/career-counseling-platform.git
+   cd career-counseling-platform
