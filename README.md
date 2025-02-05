@@ -4,6 +4,11 @@ Welcome to the **[Career Counseling Platform]** repository! This project is a fu
 
 ---
 
+## Website Preview
+<div align="center">
+  <img src="https://i.ibb.co.com/yF0rVQVR/carier.png" alt="Career Counseling Platform" width="100%" />
+</div>
+
 ## 🌐 Live Demo  
 Check out the live demo here: [https://career-counselling-92953.web.app/](https://career-counselling-92953.web.app/)  
 
@@ -68,17 +73,23 @@ Check out the live demo here: [https://career-counselling-92953.web.app/](https:
 
 ---
 
-## 🛠️ Running the Application Locally
+## Career Counseling Platform
 
 ### Prerequisites:
 - **Node.js** (version 14 or later) installed.
+- **MongoDB** (either local or MongoDB Atlas).
 - A **Firebase account** for authentication (Google login and Email/Password login).
 
-### Setup Instructions:
+## Installation
 
-1. **Clone the repository**:
-   Clone the **Career Counseling Platform** repository to your local machine:
+Step-by-step instructions to set up the project locally.
 
-   ```bash
-   git clone https://github.com/your-username/career-counseling-platform.git
-   cd career-counseling-platform
+```bash
+# Clone the repository
+https://github.com/masud2005/9th-assignment-Career-Counseling.git
+
+# Navigate to the project directory
+cd 9th-assignment-Career-Counseling
+
+# Install dependencies
+npm install
